@@ -1,0 +1,126 @@
+.student-info {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.student-info label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 600;
+}
+
+.student-info input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.student-info input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.stat-card {
+    background: #f3f5f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #536176;
+}
+
+.stat-card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2457d6;
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #f3f5f9;
+    color: #172b4d;
+}
+
+@media (max-width: 650px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+#examList {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.exam-item {
+    background: #f3f5f9;
+    padding: 18px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.exam-item h3 {
+    margin: 0 0 8px;
+}
+
+.exam-item p {
+    margin: 0;
+    color: #536176;
+    font-size: 14px;
+}
+
+.exam-item button {
+    margin-top: 8px;
+}
+
+.active-exam {
+    color: #16834a;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .exam-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

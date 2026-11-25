@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartExam | Instructor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>SmartExam</h2>
+    <p>Instructor Monitoring Dashboard</p>
+</header>
+
+<main>
+    <section class="card">
+        <h1>Examination Overview</h1>
+        <p>Student browser activity summary</p>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Total Students</h3>
+                <p id="totalStudents">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Students Who Left</h3>
+                <p id="studentsWhoLeft">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Tab Departures</h3>
+                <p id="totalDepartures">0</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+    <h2>Examination Management</h2>
+    <p>Create and manage your Google Forms examinations.</p>
+
+    <div class="student-info">
+        <label for="examTitle">Examination Title</label>
+        <input
+            type="text"
+            id="examTitle"
+            placeholder="e.g. System Integration Midterm"
+        >
+
+        <label for="examFormUrl">Google Forms URL</label>
+        <input
+            type="url"
+            id="examFormUrl"
+            placeholder="Paste your Google Forms link"
+        >
+
+        <button id="addExamButton">Add Examination</button>
+    </div>
+
+    <p id="examMessage"></p>
+
+    <h3>Available Examinations</h3>
+    <div id="examList">
+        Loading examinations...
+    </div>
+</section>
+
+    <section class="card">
+        <h2>Student Activity Summary</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Times Left</th>
+                    <th>Last Activity</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTable">
+                <tr>
+                    <td colspan="4">Loading student records...</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<script src="dashboard.js"></script>
+
+</body>
+</html>
