@@ -216,6 +216,39 @@ app.post("/api/submissions", async (req, res) => {
         });
     }
 });
+
+// GET: Retrieve student activity records for the dashboard
+app.get("/api/dashboard", async (req, res) => {
+    try {
+        const { data, error } = await supabase
+            .from("activity_logs")
+            .select("student_name, student_id, event_type, event_timestamp")
+            .order("event_timestamp", { ascending: false });
+
+        if (error) {
+            console.error("Dashboard error:", error.message);
+
+            return res.status(500).json({
+                success: false,
+                message: "Unable to retrieve student records."
+            });
+        }
+
+        res.json({
+            success: true,
+            records: data
+        });
+
+    } catch (error) {
+        console.error("Dashboard server error:", error.message);
+
+        res.status(500).json({
+            success: false,
+            message: "Server error."
+        });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`SmartExam server running at http://localhost:${PORT}`);
 });
